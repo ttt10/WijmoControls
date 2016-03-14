@@ -1,0 +1,105 @@
+<h2>IWorkbook Class</h2>
+<dl class="dl-horizontal">
+<dt>Module</dt><dd>wijmo.xlsx</dd>
+<dt>File</dt><dd>wijmo.xlsx.js</dd>
+</dl>
+<p><p>Represents Excel Workbook. This interface is a root of the Excel Workbook Object Model (WOM) that provides
+an easy way to define properties and data stored in xlsx file.</p>
+
+<p>To create an xlsx file, you need to create a JavaScript object that conforms to the <b>IWorkbook</b> interface
+definition, with child objects defining workbook sheets and their columns, rows and cells. Then pass this object
+to the <b>XlsxConverter</b> class' <b>export</b> method that will return you a corresponding xlsx file content 
+which can be then saved to disk or transferred to a server.</p>
+
+<p>In order to read an xlsx file data, you need to pass the xlsx file content to the <b>XlsxConverter</b> class' 
+<b>import</b> method which will return you a JavaScript object conforming to the <b>IWorkbook</b> interface
+that allows to easily inspect workbook data and properties. You may use it farther in various ways, for example
+draw its content on HTML page or save it as a data array for processing or data binding.</p></p>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h3 style="margin:0px" ng-click="hideProperties = !hideProperties">
+<span class="glyph-collapsed" ng-show="hideProperties"></span>
+<span class="glyph-expanded" ng-hide="hideProperties"></span>
+Properties
+</h3>
+</div>
+<table ng-hide="hideProperties" class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+
+<th></th>
+
+<th class="col-md-3">Name</th>
+
+<th class="col-md-2">Type</th>
+
+<th class="col-md-7">Description</th>
+
+</tr>
+</thead>
+<tbody>
+
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>activeWorksheet?</b></td>
+      <td><b>number</b></td>
+      <td>Index of the active sheet in the xlsx file.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>application?</b></td>
+      <td><b>string</b></td>
+      <td>The name of application that generated the file that appears in the file properties.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>company?</b></td>
+      <td><b>string</b></td>
+      <td>The name of company that generated the file that appears in the file properties.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>created?</b></td>
+      <td><b>Date</b></td>
+      <td>Creation time of the xlsx file.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>creator?</b></td>
+      <td><b>string</b></td>
+      <td>Creator of the xlsx file.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>lastModifiedBy?</b></td>
+      <td><b>string</b></td>
+      <td>Last modifier of the xlsx file.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>modified?</b></td>
+      <td><b>Date</b></td>
+      <td>Last modified time of the xlsx file.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>reservedContent?</b></td>
+      <td><b>any</b></td>
+      <td>The reserved content for the workbook.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>sheets</b></td>
+      <td><a href="topic/wijmo.xlsx.IWorkSheet.Interface.html"><b>IWorkSheet</b></a><b>[]</b></td>
+      <td>Defines an array of Excel Workbook sheets.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>styles?</b></td>
+      <td><a href="topic/wijmo.xlsx.IWorkbookStyle.Interface.html"><b>IWorkbookStyle</b></a><b>[]</b></td>
+      <td>Styles table of the workbook.</td>
+    </tr>
+</tbody>
+</table>
+</div>
+
