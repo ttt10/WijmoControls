@@ -1,9 +1,0 @@
-﻿[
-    {
-        "section": "Animation",
-        "links":  [
-            { "text": "FlexChart", "url": "#/flexchart" },
-            { "text": "FlexPie", "url": "#/flexpie" }
-        ]
-    }
-]
