@@ -1,1 +1,1 @@
-# Getting Started wiht Wijmo Controls
+# Getting Started with Wijmo Controls
