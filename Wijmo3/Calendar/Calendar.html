@@ -21,7 +21,7 @@
 		<script type="text/javascript" src="http://cdn.wijmo.com/external/require.js"></script>
 		<script type="text/javascript">
             requirejs.config({
-                baseUrl: "http://cdn.wijmo.com/amd-js/3.20153.83",
+                baseUrl: "http://cdn.wijmo.com/amd-js/3.20161.89",
                     paths: {
                         "jquery": "jquery-1.11.1.min",
                         "jquery-ui": "jquery-ui-1.11.0.custom.min",
@@ -33,21 +33,42 @@
                     }
             });
         </script>
-
-    </head>
-	<body>
-		<div class="container">
-			<div>
-				<h1>Wijmo 3</h1>
-				<h2>Control: </h2>
-			</div>
 		
-			<div class="main demo">
-				<div id="" data-bind="" style="width: 600px; height: 400px;"> 
-            	</div> 
-			</div>
+  	</head>
+  
+    <body>
 
+    <script id="scriptInit" type="text/javascript">
+        	require(["wijmo.wijcalendar"], function () { 
+            	$(function () { 
+                	$("#calendar1").wijcalendar( 
+                    	// Determines the animations easing effect is "easeOutExpo". 
+                    	{ easing: "easeOutExpo" } 
+                	); 
+            	}); 
+        	}); 
+    </script>
 
-		</div>
-	</body>
+    <div class="container"> 
+        <div class="header"> 
+            <h2>Overview</h2> 
+        </div> 
+        <div class="main demo"> 
+            <!-- Begin demo markup -->
+            <div id="calendar1"></div> 
+            <!-- End demo markup -->
+            <div class="demo-options"> 
+            <!-- Begin options markup -->
+                  
+            <!-- End options markup -->
+            </div> 
+        </div> 
+        <div class="footer demo-description"> 
+            <p> 
+                With the Wijmo Calendar widget (wijcalendar), you can show a single month or a table of months with customizable styles and navigation elements. 
+                The samples in this section will introduce you to some of the features of the wijcalendar widget. 
+            </p> 
+        </div> 
+    </div>
+    </body>
 </html>
