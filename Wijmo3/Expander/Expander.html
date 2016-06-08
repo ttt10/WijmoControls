@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+
+		<!--jQuery References-->
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+		<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js" type="text/javascript"></script>
+  
+		<!--Theme-->
+		<link href="http://cdn.wijmo.com/themes/aristo/jquery-wijmo.css" rel="stylesheet" type="text/css" />
+  
+		<!--Wijmo Widgets CSS-->
+		<link href="http://cdn.wijmo.com/jquery.wijmo-pro.all.3.20161.89.min.css" rel="stylesheet" type="text/css" />
+  
+		<!--Wijmo Widgets JavaScript-->
+		<script src="http://cdn.wijmo.com/jquery.wijmo-open.all.3.20161.89.min.js" type="text/javascript"></script>
+		<script src="http://cdn.wijmo.com/jquery.wijmo-pro.all.3.20161.89.min.js" type="text/javascript"></script>
+
+		<!--RequireJs-->
+		<script type="text/javascript" src="http://cdn.wijmo.com/external/require.js"></script>
+		<script type="text/javascript">
+            requirejs.config({
+                baseUrl: "http://cdn.wijmo.com/amd-js/3.20161.89",
+                    paths: {
+                        "jquery": "jquery-1.11.1.min",
+                        "jquery-ui": "jquery-ui-1.11.0.custom.min",
+                        "jquery.ui": "jquery-ui",
+                        "jquery.mousewheel": "jquery.mousewheel.min",
+                        "globalize": "globalize.min",
+                        "bootstrap": "bootstrap.min", //Needed if you use Bootstrap.
+                        "knockout": "knockout-3.1.0" //Needed if you use Knockout.
+                    }
+            });
+        </script>
+		
+  	</head>
+
+  	<body>
+  		<div>
+        <h1>Wijmo 3</h1>
+        <h2>Expander Widget</h2>
+      </div>
+  	
+      <script id="scriptInit" type="text/javascript">
+        require(["wijmo.wijexpander"], function () { 
+            $(document).ready(function () { 
+                $("#expander").wijexpander(); 
+            }); 
+        }); 
+    </script>
+  
+  
+    <div class="container"> 
+         
+        <div class="main demo"> 
+            <!-- Begin demo markup -->
+            <div id="expander"> 
+                <h3> 
+                    Header</h3> 
+                <div> 
+                    Vestibulum ut eros non enim commodo hendrerit. Donec porttitor tellus non magna. Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris sapien, cursus in. 
+                </div> 
+            </div> 
+            <!-- End demo markup -->
+            <div class="demo-options"> 
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div> 
+        </div> 
+        <div class="footer demo-description"> 
+            <p> 
+                The wijexpaner widget allows you to show or hide embedded or external content with an expanding panel and using several animation effects. The expanding content can be shown or hidden by clicking the expanding panel at run time. 
+            </p> 
+            <p> 
+                The following samples will introduce you to several features of the wijexpander widget, including animation and loading external content.</p> 
+        </div> 
+    </div>
+© 2015 GrapeCity, Inc. All Rights Reserved. All product and company names herein may be trademarks of their respective owners.
+  	</body>
+
+</html>

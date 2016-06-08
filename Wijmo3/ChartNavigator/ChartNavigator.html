@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+
+		<!--jQuery References-->
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+		<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js" type="text/javascript"></script>
+  
+		<!--Theme-->
+		<link href="http://cdn.wijmo.com/themes/aristo/jquery-wijmo.css" rel="stylesheet" type="text/css" />
+  
+		<!--Wijmo Widgets CSS-->
+		<link href="http://cdn.wijmo.com/jquery.wijmo-pro.all.3.20161.89.min.css" rel="stylesheet" type="text/css" />
+  
+		<!--Wijmo Widgets JavaScript-->
+		<script src="http://cdn.wijmo.com/jquery.wijmo-open.all.3.20161.89.min.js" type="text/javascript"></script>
+		<script src="http://cdn.wijmo.com/jquery.wijmo-pro.all.3.20161.89.min.js" type="text/javascript"></script>
+
+		<!--RequireJs-->
+		<script type="text/javascript" src="http://cdn.wijmo.com/external/require.js"></script>
+		<script type="text/javascript">
+            requirejs.config({
+                baseUrl: "http://cdn.wijmo.com/amd-js/3.20161.89",
+                    paths: {
+                        "jquery": "jquery-1.11.1.min",
+                        "jquery-ui": "jquery-ui-1.11.0.custom.min",
+                        "jquery.ui": "jquery-ui",
+                        "jquery.mousewheel": "jquery.mousewheel.min",
+                        "globalize": "globalize.min",
+                        "bootstrap": "bootstrap.min", //Needed if you use Bootstrap.
+                        "knockout": "knockout-3.1.0" //Needed if you use Knockout.
+                    }
+            });
+        </script>
+		
+  	</head>
+
+  	<body>
+  		<div>
+        <h1>Wijmo 3</h1>
+        <h2>ChartNavigator Widget</h2>
+      </div>
+  	
+      <script id="scriptInit" type="text/javascript">
+        require(["wijmo.wijcandlestickchart", "wijmo.wijchartnavigator"], function () { 
+            $(document).ready(function () { 
+                var data = { 
+                    x: [new Date("2013/1/24"), new Date("2013/1/25"), new Date("2013/1/28"), new Date("2013/1/29"), new Date("2013/1/30"), 
+                        new Date("2013/1/31"), new Date("2013/2/1"), new Date("2013/2/4"), new Date("2013/2/5"), new Date("2013/2/6"), 
+                        new Date("2013/2/7"), new Date("2013/2/8"), new Date("2013/2/18"), new Date("2013/2/19"), new Date("2013/2/20"), 
+                        new Date("2013/2/21"), new Date("2013/2/22"), new Date("2013/2/25"), new Date("2013/2/26"), new Date("2013/2/27"), 
+                        new Date("2013/2/28"), new Date("2013/3/1"), new Date("2013/3/4"), new Date("2013/3/5"), new Date("2013/3/6"), 
+                        new Date("2013/3/7"), new Date("2013/3/8"), new Date("2013/3/11"), new Date("2013/3/12"), new Date("2013/3/13"), 
+                        new Date("2013/3/14"), new Date("2013/3/15"), new Date("2013/3/18"), new Date("2013/3/19"), new Date("2013/3/20"), 
+                        new Date("2013/3/21"), new Date("2013/3/22"), new Date("2013/3/25"), new Date("2013/3/26"), new Date("2013/3/27"), 
+                        new Date("2013/3/28"), new Date("2013/3/29"), new Date("2013/4/1"), new Date("2013/4/2"), new Date("2013/4/3"), 
+                        new Date("2013/4/8"), new Date("2013/4/9"), new Date("2013/4/10"), new Date("2013/4/11"), new Date("2013/4/12"), 
+                        new Date("2013/4/15"), new Date("2013/4/16"), new Date("2013/4/17"), new Date("2013/4/18"), new Date("2013/4/19"), 
+                        new Date("2013/4/22"), new Date("2013/4/23"), new Date("2013/4/24"), new Date("2013/4/25"), new Date("2013/4/26"), 
+                        new Date("2013/5/2"), new Date("2013/5/3"), new Date("2013/5/6"), new Date("2013/5/7"), new Date("2013/5/8"), 
+                        new Date("2013/5/9"), new Date("2013/5/10"), new Date("2013/5/13"), new Date("2013/5/14"), new Date("2013/5/15"), 
+                        new Date("2013/5/16"), new Date("2013/5/17"), new Date("2013/5/20"), new Date("2013/5/21"), new Date("2013/5/22"), 
+                        new Date("2013/5/23"), new Date("2013/5/24"), new Date("2013/5/27"), new Date("2013/5/28"), new Date("2013/5/29"), 
+                        new Date("2013/5/30"), new Date("2013/5/31"), new Date("2013/6/3"), new Date("2013/6/4"), new Date("2013/6/5"), 
+                        new Date("2013/6/6"), new Date("2013/6/7"), new Date("2013/6/13")], 
+                    y: [2320.26, 2300.26, 
+                        2295.35, 2347.22, 2360.75, 2383.43, 2377.41, 2425.92, 2411.24, 2432.68, 2430.69, 2416.62, 2441.91, 2420.26, 2383.49, 2378.82, 2322.94, 
+                        2320.62, 2313.74, 2297.77, 2322.32, 2364.54, 2332.08, 2274.81, 2333.61, 2340.44, 2326.42, 2314.68, 2309.16, 2282.17, 2255.77, 2269.31, 
+                        2267.29, 2244.26, 2257.74, 2318.21, 2321.41, 2334.74, 2318.58, 2299.38, 2273.55, 2238.49, 2229.46, 2234.92, 2232.69, 2196.24, 2215.47, 
+                        2224.93, 2236.98, 2218.09, 2199.91, 2169.63, 2195.03, 2181.82, 2201.12, 2236.42, 2242.62, 2187.35, 2213.19, 2203.89, 2170.78, 2179.05, 
+                        2212.51, 2227.86, 2242.39, 2246.96, 2228.82, 2247.68, 2238.93, 2217.09, 2221.34, 2249.81, 2286.33, 2297.11, 2303.75, 2293.81, 2281.45, 
+                        2286.66, 2293.40, 2323.54, 2316.25, 2320.74, 2300.21, 2297.10, 2270.71, 2264.43, 2242.26, 2190.10], 
+                    open: [2320.26, 2300.26, 
+                           2295.35, 2347.22, 2360.75, 2383.43, 2377.41, 2425.92, 2411.24, 2432.68, 2430.69, 2416.62, 2441.91, 2420.26, 2383.49, 2378.82, 2322.94, 
+                           2320.62, 2313.74, 2297.77, 2322.32, 2364.54, 2332.08, 2274.81, 2333.61, 2340.44, 2326.42, 2314.68, 2309.16, 2282.17, 2255.77, 2269.31, 
+                           2267.29, 2244.26, 2257.74, 2318.21, 2321.41, 2334.74, 2318.58, 2299.38, 2273.55, 2238.49, 2229.46, 2234.92, 2232.69, 2196.24, 2215.47, 
+                           2224.93, 2236.98, 2218.09, 2199.91, 2169.63, 2195.03, 2181.82, 2201.12, 2236.42, 2242.62, 2187.35, 2213.19, 2203.89, 2170.78, 2179.05, 
+                           2212.51, 2227.86, 2242.39, 2246.96, 2228.82, 2247.68, 2238.93, 2217.09, 2221.34, 2249.81, 2286.33, 2297.11, 2303.75, 2293.81, 2281.45, 
+                           2286.66, 2293.40, 2323.54, 2316.25, 2320.74, 2300.21, 2297.10, 2270.71, 2264.43, 2242.26, 2190.10], 
+  
+                    close: [2302.60, 2291.30, 
+                          2346.50, 2358.90, 2382.40, 2385.40, 2419.00, 2428.10, 2433.10, 2434.40, 2418.50, 2432.40, 2421.50, 2382.90, 2397.10, 2325.90, 2314.10, 
+                          2325.80, 2293.30, 2313.20, 2365.50, 2359.50, 2273.40, 2326.30, 2347.10, 2324.20, 2318.60, 2310.50, 2286.60, 2263.90, 2270.20, 2278.40, 
+                          2240.00, 2257.40, 2317.30, 2324.20, 2328.20, 2326.70, 2297.60, 2301.20, 2236.30, 2236.60, 2234.40, 2227.70, 2225.20, 2211.50, 2225.70, 
+                          2226.10, 2219.50, 2206.70, 2181.90, 2194.80, 2193.80, 2197.60, 2244.60, 2242.10, 2184.50, 2218.30, 2199.30, 2177.90, 2174.10, 2205.50, 
+                          2231.10, 2235.50, 2246.30, 2232.90, 2246.80, 2241.90, 2217.00, 2224.80, 2251.80, 2282.80, 2299.99, 2305.11, 2302.40, 2275.67, 2288.53, 
+                          2293.08, 2321.32, 2324.02, 2317.75, 2300.59, 2299.25, 2272.42, 2270.93, 2242.11, 2210.90, 2148.35], 
+                    low: [2287.30, 2288.20, 
+                           2295.30, 2337.30, 2347.80, 2371.20, 2369.50, 2417.50, 2403.30, 2427.70, 2394.20, 2414.40, 2415.40, 2373.50, 2370.60, 2309.10, 2308.70, 
+                           2315.00, 2289.80, 2292.00, 2308.90, 2330.80, 2259.20, 2270.10, 2321.60, 2304.20, 2314.50, 2296.50, 2264.80, 2253.20, 2253.30, 2250.20, 
+                           2239.20, 2232.00, 2257.40, 2311.60, 2314.90, 2319.90, 2281.10, 2289.20, 2232.90, 2228.80, 2227.30, 2220.40, 2217.20, 2180.60, 2215.40, 
+                           2212.50, 2217.20, 2204.40, 2177.30, 2165.70, 2178.40, 2175.40, 2200.50, 2232.20, 2182.80, 2184.10, 2191.80, 2173.80, 2161.10, 2179.00, 
+                           2212.50, 2219.40, 2235.40, 2221.30, 2225.80, 2231.30, 2205.80, 2213.50, 2210.70, 2248.40, 2281.90, 2290.12, 2292.43, 2274.10, 2270.25, 
+                           2283.94, 2281.47, 2321.17, 2310.49, 2299.37, 2294.11, 2264.76, 2260.87, 2240.07, 2205.07, 2126.22, ], 
+                    high: [2362.90, 2308.30, 
+                            2346.90, 2363.80, 2383.70, 2391.80, 2421.10, 2440.30, 2437.40, 2441.70, 2433.80, 2443.00, 2444.80, 2427.00, 2397.90, 2378.80, 2330.80, 
+                            2338.70, 2340.70, 2324.60, 2366.10, 2369.60, 2333.50, 2328.10, 2351.40, 2352.00, 2333.60, 2320.90, 2333.20, 2286.30, 2276.20, 2212.00, 
+                            2276.00, 2261.30, 2317.80, 2330.80, 2332.40, 2344.80, 2319.90, 2323.40, 2273.50, 2246.80, 2243.90, 2253.40, 2241.30, 2212.50, 2234.70, 
+                            2233.00, 2242.40, 2226.20, 2204.90, 2196.40, 2197.50, 2206.00, 2250.10, 2245.10, 2242.60, 2226.10, 2224.60, 2210.50, 2179.60, 2222.80, 
+                            2236.00, 2240.20, 2255.20, 2247.80, 2247.60, 2250.80, 2239.90, 2225.10, 2252.80, 2288.00, 2309.30, 2305.30, 2314.10, 2304.90, 2292.50, 
+                            2301.70, 2322.10, 2334.30, 2325.70, 2325.50, 2313.40, 2297.10, 2276.80, 2266.60, 2250.60, 2190.10] 
+                }; 
+  
+                $("#chart1").wijcandlestickchart({ 
+                    textStyle: { 
+                        "font-size": "13px", 
+                        "font-family": '"Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif'
+                    }, 
+                    header: { 
+                        text: "Shanghai Stock Index in first half of 2013"
+                    }, 
+                    legend: { 
+                        visible: false, 
+                    }, 
+                    hint: { 
+                        content: function () { 
+                            return this.label + ' - ' + 
+                            Globalize.format(this.x, "d") + 
+                            '\n High:' + this.high + 
+                            '\n Low:' + this.low + 
+                            '\n Open:' + this.open + 
+                            '\n Close:' + this.close; 
+                        }, 
+                        contentStyle: { 
+                            "font-size": "12px", 
+                            "font-family": '"Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif'
+                        }, 
+                        style: { 
+                            fill: "#444444", 
+                            stroke: "none"
+                        } 
+                    }, 
+                    axis: { 
+                        x: { 
+                            textVisible: false, 
+                            visible: false
+                        } 
+                    }, 
+                    seriesList: [{ 
+                        label: "MSFT", 
+                        data: data 
+                    }], 
+                    seriesStyles: [ 
+                        { 
+                            highLow: { fill: "rgb(140,140,140)", width: 2 }, 
+                            fallingClose: { fill: "rgb(240,126,110)", width: 6 }, 
+                            risingClose: { fill: "rgb(144,205,151)", width: 6 } 
+                        } 
+                    ], 
+                    marginTop: 5, 
+                    marginBottom: 5, 
+                    marginLeft: 2, 
+                    marginRight: 2, 
+                }); 
+                $("#wijchartnavigator").wijchartnavigator({ 
+                    targetSelector: "#chart1", 
+                    rangeMin: $.toOADate(new Date("2013/3/10")), 
+                    rangeMax: $.toOADate(new Date("2013/4/4")), 
+                    step: 1000 * 60 * 60 * 24, 
+                    xAxis: { 
+                        textStyle: { 
+                            "font-family": "Monaco, Menlo, Consolas, 'Courier New', monospace"
+                        } 
+                    }, 
+                    seriesList: [{ 
+                        data: { x: data.x, y: data.high } 
+                    }], 
+                    seriesStyles: [{ 
+                        stroke: "#88bde6", 
+                        "stroke-width": "2", 
+                        fill: "#88bde6"
+                    }] 
+                }); 
+            }); 
+        }); 
+    </script>
+  
+  
+    <div class="container"> 
+        <div class="header"> 
+            <h2> 
+                Overview</h2> 
+        </div> 
+        <div class="main demo"> 
+            <div id="chart1" style="width:700px; height: 250px; margin-bottom: 20px"></div> 
+            <div id="wijchartnavigator" style="width:700px; height: 56px"> 
+            </div> 
+            <div class="demo-options"> 
+            </div> 
+        </div> 
+        <div class="footer demo-description"> 
+            <p> 
+                The Wijmo wijchartnavigator works with some special types of wijcharts: wijlinechart, wijbarchart and wijcandlestickchart. 
+                It provides a range slider to specify the data range which is shown in the binded charts. 
+                </p> 
+        </div> 
+    </div>
+  	</body>
+
+</html>
